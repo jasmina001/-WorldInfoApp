@@ -9,14 +9,7 @@ function getCountryInfo() {
     fetch(`https://restcountries.com/v3.1/name/${country}`)
         .then(response => response.json())
         .then(data => {
-            let countryData = data[0];
-
-            let borders = "Chegaradosh davlatlar yo'q"; 
-            if (countryData.borders) {
-                borders = countryData.borders.join(", ");
-            }
-
-            document.getElementById("result").innerHTML = `
+          t.getElementById("result").innerHTML = `
                 <p><strong>Davlat:</strong> ${countryData.name.common}</p>
                 <p><strong>Aholisi:</strong> ${countryData.population.toLocaleString()}</p>
                 <p><strong>Region:</strong> ${countryData.region}</p>
