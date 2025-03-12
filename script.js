@@ -32,25 +32,22 @@
 //         });
 // }
 
-async function fetchData() {
-    try {
-        const response = await fetch('https://jsonplaceholder.typicode.com/posts?_limit=10');
-        const data = await response.json();
-
-        const container = document.getElementById('card-container');
-        data.forEach(post => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-            card.innerHTML = `<h3>${post.title}</h3><p>${post.body}</p>`;
-            container.appendChild(card);
-        });
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
-
-fetchData();
 
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const container = document.getElementById("image-container");
+
+    fetch("https://jsonplaceholder.typicode.com/photos?")
+        .then(response => response.json())
+        .then(data => {
+            data.forEach(photo => {
+                const img = document.createElement("img");
+                img.src = photo.thumbnailUrl;
+                img.alt = photo.title;
+                container.appendChild(img);
+            });
+        })
+        .catch(error => console.error("Xatolik yuz berdi:", error));
+});
