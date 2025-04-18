@@ -43,6 +43,10 @@ button:hover {
     margin-top: 20px;
     font-size: 18px;
 }
-
+img {
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 5px;
+} 
 
 
